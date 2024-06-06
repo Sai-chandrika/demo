@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.EmployeeDto;
 import com.example.demo.entity.Employee;
 import com.example.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
     @PostMapping("/save")
-    public String save(@RequestBody Employee employeeProjectDto){
+    public EmployeeDto save(@RequestBody EmployeeDto employeeProjectDto){
 
         return employeeService.save(employeeProjectDto);
     }
